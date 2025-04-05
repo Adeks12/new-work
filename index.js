@@ -21,7 +21,7 @@ mongoose.connect(process.env.Mongo_uri,{
     console.error('MongoDB connection error:', error);
 });
 app.use('/api/auth', authRoutes);
-app.use('/api', noteRoutes);
+app.use('/api/notes', require('./routes/notes'));
 
 app.get('/', (req, res)=>{
     res.send('API is running...');
